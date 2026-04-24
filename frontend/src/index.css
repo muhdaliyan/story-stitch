@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "DM Serif Display", serif;
+  --font-sans: "Space Grotesk", sans-serif;
+  
+  --color-flame: #ab2f0a;
+  --color-flame-light: #cd4722;
+  --color-teal: #006a64;
+  --color-teal-light: #0f7a73;
+  --color-ink: #132027;
+  --color-canvas: #fef9f0;
+  --color-surface-low: #f2ede4;
+  --color-surface-mid: #e7e2d9;
+}
+
+@layer base {
+  :root {
+    /* Since body is zoomed to 0.8, we need 1/0.8 = 1.25 of vh to fill the physical screen */
+    --zoom-factor: 0.8;
+    --fill-height: calc(100vh / var(--zoom-factor));
+    --fill-width: calc(100vw / var(--zoom-factor));
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased selection:bg-flame/20 outline-none;
+    zoom: var(--zoom-factor);
+    min-height: var(--fill-height);
+    width: var(--fill-width);
+    --grid-size: 26px;
+    background-image: 
+      linear-gradient(to right, rgba(19, 32, 39, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(19, 32, 39, 0.05) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  /* Hide number input spinners */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  /* Hide visual scrollbars globally while maintaining scroll functionality */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.atmosphere-top-left {
+  background: radial-gradient(circle at top left, rgba(255, 233, 191, 0.25) 0%, transparent 60%);
+}
+
+.atmosphere-top-right {
+  background: radial-gradient(circle at top right, rgba(183, 239, 232, 0.2) 0%, transparent 60%);
+}
+
+.glass-panel {
+  @apply backdrop-blur-xl bg-canvas/60;
+}
+
+.node-card {
+  @apply rounded-[18px] border-2 border-ink bg-white shadow-[0px_12px_32px_rgba(19,32,39,0.12)];
+}
