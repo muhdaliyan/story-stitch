@@ -22,6 +22,27 @@
 
 ---
 
+## 📸 App Preview
+
+<div align="center">
+  <table>
+    <tr>
+      <td width="50%"><img src="frontend/src/assets/images/1.png" alt="Screen 1" /></td>
+      <td width="50%"><img src="frontend/src/assets/images/2.png" alt="Screen 2" /></td>
+    </tr>
+    <tr>
+      <td width="50%"><img src="frontend/src/assets/images/3.png" alt="Screen 3" /></td>
+      <td width="50%"><img src="frontend/src/assets/images/4.png" alt="Screen 4" /></td>
+    </tr>
+    <tr>
+      <td width="50%"><img src="frontend/src/assets/images/5.png" alt="Screen 5" /></td>
+      <td width="50%"><img src="frontend/src/assets/images/6.png" alt="Screen 6" /></td>
+    </tr>
+  </table>
+</div>
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
